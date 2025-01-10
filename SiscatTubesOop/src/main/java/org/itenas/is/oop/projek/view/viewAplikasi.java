@@ -354,7 +354,26 @@ public class viewAplikasi extends javax.swing.JFrame {
     }//GEN-LAST:event_ComboBoxCariActionPerformed
 
     private void pilih_kategoriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pilih_kategoriActionPerformed
-   
+        try {
+            int selectedRow = tabelCatatan.getSelectedRow();
+
+            if (selectedRow >= 0) {
+                String kategori = tabelCatatan.getValueAt(selectedRow, 0).toString();
+                String tanggal = tabelCatatan.getValueAt(selectedRow, 1).toString();
+                String deskripsi = tabelCatatan.getValueAt(selectedRow, 2).toString();
+                String jumlah = tabelCatatan.getValueAt(selectedRow, 3).toString();
+
+                pilih_kategori.setSelectedItem(kategori);
+                txtTanggal.setText(tanggal);
+                txtDeskripsi.setText(deskripsi);
+                txtJumlah.setText(jumlah);
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, 
+                "Error selecting row: " + e.getMessage(), 
+                "Error", 
+                JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_pilih_kategoriActionPerformed
 
     private void tabelCatatanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelCatatanMouseClicked
