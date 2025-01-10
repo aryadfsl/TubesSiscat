@@ -10,7 +10,7 @@ import org.itenas.is.oop.projek.repository.PengelolaLogin;
 
 /**
  *
- * @author ASUS
+ * @author Ahmad
  */
 public class viewLogin extends javax.swing.JFrame {
 
@@ -125,8 +125,11 @@ public class viewLogin extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("CATAT YUKK");
 
+<<<<<<< HEAD
+=======
         jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\Downloads\\icons8-money-100.png")); // NOI18N
 
+>>>>>>> 06e84b9a7b2297b86d475ace60d913531175a731
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -317,6 +320,13 @@ public class viewLogin extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
+<<<<<<< HEAD
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+=======
+>>>>>>> 06e84b9a7b2297b86d475ace60d913531175a731
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
