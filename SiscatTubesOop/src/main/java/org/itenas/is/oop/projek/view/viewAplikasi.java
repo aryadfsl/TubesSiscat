@@ -4,96 +4,19 @@
  */
 package org.itenas.is.oop.projek.view;
 
-import javax.swing.JOptionPane;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.text.DecimalFormat;
-import javax.swing.table.DefaultTableModel;
-import org.itenas.is.oop.projek.utils.PengelolaKoneksi;
-
 /**
  *
- * @author ASUS
+ * @author Achmad
  */
 public class viewAplikasi extends javax.swing.JFrame {
 
-    static Object txtsaldo;
-    private String currentFilter = "all";
-    private DecimalFormat decimalFormat = new DecimalFormat("#,##0.000");
-    
-    public void setFilter(String filter) {
-        this.currentFilter = filter;
-        refreshTable();
-    }
-
-    private void refreshTable() {
-        try {
-            Connection conn = new PengelolaKoneksi().masuk();
-            String sql;
-            if ("all".equals(currentFilter)) {
-                sql = "SELECT * FROM catatan ORDER BY tanggal DESC";
-            } else {
-                sql = "SELECT * FROM catatan WHERE kategori = ? ORDER BY tanggal DESC";
-            }
-            
-            PreparedStatement ps = conn.prepareStatement(sql);
-            if (!"all".equals(currentFilter)) {
-                ps.setString(1, currentFilter);
-            }
-            
-            ResultSet rs = ps.executeQuery();
-            
-            DefaultTableModel model = (DefaultTableModel) tabelCatatan.getModel();
-            model.setRowCount(0);
-            
-            while (rs.next()) {
-                model.addRow(new Object[]{
-                    rs.getString("kategori"),
-                    rs.getDate("tanggal"),
-                    rs.getString("deskripsi"),
-                    decimalFormat.format(rs.getDouble("jumlah"))
-                });
-            }
-            
-            rs.close();
-            ps.close();
-            conn.close();
-            
-        } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(this, "Error refreshing table: " + ex.getMessage());
-        }
-    }
-
-    private void loadTableData() {
-        PengelolaKoneksi connectionManager = new PengelolaKoneksi();
-        try (Connection conn = connectionManager.masuk()) {
-            String query = "SELECT kategori, tanggal, deskripsi, jumlah FROM catatan";
-            PreparedStatement ps = conn.prepareStatement(query);
-            ResultSet rs = ps.executeQuery();
-
-            DefaultTableModel model = (DefaultTableModel) tabelCatatan.getModel();
-            model.setRowCount(0);
-
-            while (rs.next()) {
-                model.addRow(new Object[]{
-                    rs.getString("kategori"),
-                    rs.getString("tanggal"),
-                    rs.getString("deskripsi"),
-                    decimalFormat.format(rs.getDouble("jumlah"))
-                });
-            }
-        } catch (Exception ex) {
-            JOptionPane.showMessageDialog(this, "Gagal memuat data: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-        }
-    }
-
-    public viewAplikasi(String pemasukan) {
+    /**
+     * Creates new form viewAplikasi
+     */
+    public viewAplikasi() {
         initComponents();
-        loadTableData();
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -127,7 +50,6 @@ public class viewAplikasi extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(203, 210, 164));
 
-        btnSubmit.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\AppData\\Local\\Temp\\Rar$DRa0.448\\Images\\save.png")); // NOI18N
         btnSubmit.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnSubmitMouseClicked(evt);
@@ -139,28 +61,24 @@ public class viewAplikasi extends javax.swing.JFrame {
             }
         });
 
-        btnUpdate.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\AppData\\Local\\Temp\\Rar$DRa0.023\\Images\\refresh.png")); // NOI18N
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnUpdateActionPerformed(evt);
             }
         });
 
-        DELETE.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\AppData\\Local\\Temp\\Rar$DRa0.063\\Images\\delete.png")); // NOI18N
         DELETE.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DELETEActionPerformed(evt);
             }
         });
 
-        btnClear.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\AppData\\Local\\Temp\\Rar$DRa0.849\\Images\\clear.png")); // NOI18N
         btnClear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnClearActionPerformed(evt);
             }
         });
 
-        btnKembali.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\AppData\\Local\\Temp\\Rar$DRa0.488\\Images\\exit.png")); // NOI18N
         btnKembali.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnKembaliActionPerformed(evt);
@@ -192,7 +110,7 @@ public class viewAplikasi extends javax.swing.JFrame {
                 .addComponent(DELETE, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnClear, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnKembali)
                 .addGap(44, 44, 44))
         );
@@ -279,13 +197,13 @@ public class viewAplikasi extends javax.swing.JFrame {
                                     .addComponent(txtDeskripsi, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtTanggal, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtJumlah, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addContainerGap(49, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(39, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ComboBoxCari, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(pilih_kategori, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -320,65 +238,67 @@ public class viewAplikasi extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtDeskripsiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDeskripsiActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtDeskripsiActionPerformed
-
-    private void DELETEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DELETEActionPerformed
-        
-    }//GEN-LAST:event_DELETEActionPerformed
-
-    private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
-        clearInputFields();
-    }//GEN-LAST:event_btnClearActionPerformed
-
     private void btnSubmitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSubmitMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_btnSubmitMouseClicked
 
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
-        
+
     }//GEN-LAST:event_btnSubmitActionPerformed
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
-        
+
     }//GEN-LAST:event_btnUpdateActionPerformed
 
+    private void DELETEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DELETEActionPerformed
+int selectedRow = tabelCatatan.getSelectedRow();
+        if (selectedRow == -1) {
+            JOptionPane.showMessageDialog(this, "Pilih data yang ingin dihapus!", "Peringatan", JOptionPane.WARNING_MESSAGE);
+        } else {
+            String kategori = (String) tabelCatatan.getValueAt(selectedRow, 0); 
+            String deskripsi = (String) tabelCatatan.getValueAt(selectedRow, 2); 
+           
+            int confirmation = JOptionPane.showConfirmDialog(this, "Anda yakin ingin menghapus data dengan kategori '" + kategori + "' dan deskripsi '" + deskripsi + "'?", "Konfirmasi Hapus", JOptionPane.YES_NO_OPTION);
+            if (confirmation == JOptionPane.YES_OPTION) {
+                ConnectionManager connectionManager = new ConnectionManager();
+                try (Connection conn = connectionManager.logOn()) {
+                  String query = "DELETE FROM catatan WHERE kategori = ? AND deskripsi = ? LIMIT 1";  // Gunakan deskripsi untuk memastikan hanya satu data yang dihapus
+                    PreparedStatement ps = conn.prepareStatement(query);
+                    ps.setString(1, kategori);
+                    ps.setString(2, deskripsi);  
+                    ps.executeUpdate();
+                    JOptionPane.showMessageDialog(this, "Data berhasil dihapus!", "Info", JOptionPane.INFORMATION_MESSAGE);
+                    loadTableData(); 
+                } catch (SQLException ex) {
+                    JOptionPane.showMessageDialog(this, "Gagal menghapus data: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+        }
+    }//GEN-LAST:event_DELETEActionPerformed
+
+    private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
+
+    }//GEN-LAST:event_btnClearActionPerformed
+
     private void btnKembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKembaliActionPerformed
-        new TampilanUtama().setVisible(true);
-        dispose();
+
     }//GEN-LAST:event_btnKembaliActionPerformed
 
+    private void tabelCatatanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelCatatanMouseClicked
+
+    }//GEN-LAST:event_tabelCatatanMouseClicked
+
+    private void txtDeskripsiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDeskripsiActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDeskripsiActionPerformed
+
     private void ComboBoxCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboBoxCariActionPerformed
-       
+
     }//GEN-LAST:event_ComboBoxCariActionPerformed
 
     private void pilih_kategoriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pilih_kategoriActionPerformed
-   
-    }//GEN-LAST:event_pilih_kategoriActionPerformed
 
-    private void tabelCatatanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelCatatanMouseClicked
-        try {
-        int selectedRow = tabelCatatan.getSelectedRow();
-        
-        if (selectedRow >= 0) {
-            String kategori = tabelCatatan.getValueAt(selectedRow, 0).toString();
-            String tanggal = tabelCatatan.getValueAt(selectedRow, 1).toString();
-            String deskripsi = tabelCatatan.getValueAt(selectedRow, 2).toString();
-            String jumlah = tabelCatatan.getValueAt(selectedRow, 3).toString();
-            
-            pilih_kategori.setSelectedItem(kategori);
-            txtTanggal.setText(tanggal);
-            txtDeskripsi.setText(deskripsi);
-            txtJumlah.setText(jumlah);
-        }
-    } catch (Exception e) {
-        JOptionPane.showMessageDialog(this, 
-            "Error selecting row: " + e.getMessage(), 
-            "Error", 
-            JOptionPane.ERROR_MESSAGE);
-    }
-    }//GEN-LAST:event_tabelCatatanMouseClicked
+    }//GEN-LAST:event_pilih_kategoriActionPerformed
 
     /**
      * @param args the command line arguments
@@ -406,24 +326,14 @@ public class viewAplikasi extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(viewAplikasi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new viewAplikasi("pemasukan").setVisible(true);
+                new viewAplikasi().setVisible(true);
             }
         });
     }
-    
-    private void clearInputFields() {
-    txtTanggal.setText("");
-    txtDeskripsi.setText("");
-    txtJumlah.setText("");
-
-}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> ComboBoxCari;
