@@ -247,33 +247,20 @@ public class viewAplikasi extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSubmitActionPerformed
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
-
+int selectedRow = tabelCatatan.getSelectedRow();
+        if (selectedRow == -1) {
+            JOptionPane.showMessageDialog(this, "Pilih data yang ingin diperbarui!", "Peringatan", JOptionPane.WARNING_MESSAGE);
+        } else {
+            tabelCatatan.setValueAt(txtTanggal.getText(), selectedRow, 1);
+            tabelCatatan.setValueAt(txtDeskripsi.getText(), selectedRow, 2);
+            tabelCatatan.setValueAt(txtJumlah.getText(), selectedRow, 3);
+            JOptionPane.showMessageDialog(this, "Data berhasil diperbarui!", "Info", JOptionPane.INFORMATION_MESSAGE);
+            clearInputFields();
+        }
     }//GEN-LAST:event_btnUpdateActionPerformed
 
     private void DELETEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DELETEActionPerformed
-int selectedRow = tabelCatatan.getSelectedRow();
-        if (selectedRow == -1) {
-            JOptionPane.showMessageDialog(this, "Pilih data yang ingin dihapus!", "Peringatan", JOptionPane.WARNING_MESSAGE);
-        } else {
-            String kategori = (String) tabelCatatan.getValueAt(selectedRow, 0); 
-            String deskripsi = (String) tabelCatatan.getValueAt(selectedRow, 2); 
-           
-            int confirmation = JOptionPane.showConfirmDialog(this, "Anda yakin ingin menghapus data dengan kategori '" + kategori + "' dan deskripsi '" + deskripsi + "'?", "Konfirmasi Hapus", JOptionPane.YES_NO_OPTION);
-            if (confirmation == JOptionPane.YES_OPTION) {
-                ConnectionManager connectionManager = new ConnectionManager();
-                try (Connection conn = connectionManager.logOn()) {
-                  String query = "DELETE FROM catatan WHERE kategori = ? AND deskripsi = ? LIMIT 1";  // Gunakan deskripsi untuk memastikan hanya satu data yang dihapus
-                    PreparedStatement ps = conn.prepareStatement(query);
-                    ps.setString(1, kategori);
-                    ps.setString(2, deskripsi);  
-                    ps.executeUpdate();
-                    JOptionPane.showMessageDialog(this, "Data berhasil dihapus!", "Info", JOptionPane.INFORMATION_MESSAGE);
-                    loadTableData(); 
-                } catch (SQLException ex) {
-                    JOptionPane.showMessageDialog(this, "Gagal menghapus data: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-                }
-            }
-        }
+
     }//GEN-LAST:event_DELETEActionPerformed
 
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
