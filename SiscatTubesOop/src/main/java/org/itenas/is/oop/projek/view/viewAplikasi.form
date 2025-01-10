@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<<<<<<< HEAD
 <Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
-=======
-<<<<<<< HEAD
-<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
-=======
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
->>>>>>> bd6189c89bc2e02562b41b598b9a3e8c0c99b6da
->>>>>>> 8096dfec1e6f1c062e39a5ae0a515c6fe264d6ae
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
   </Properties>
@@ -61,68 +53,28 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-<<<<<<< HEAD
                               <Group type="102" attributes="0">
-=======
-<<<<<<< HEAD
-                              <Group type="102" attributes="0">
-=======
-                              <Group type="102" alignment="0" attributes="0">
->>>>>>> bd6189c89bc2e02562b41b598b9a3e8c0c99b6da
->>>>>>> 8096dfec1e6f1c062e39a5ae0a515c6fe264d6ae
                                   <Component id="ComboBoxCari" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                                   <Component id="pilih_kategori" min="-2" max="-2" attributes="0"/>
                               </Group>
-<<<<<<< HEAD
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-=======
-<<<<<<< HEAD
-                              <Group type="102" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-=======
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
->>>>>>> bd6189c89bc2e02562b41b598b9a3e8c0c99b6da
->>>>>>> 8096dfec1e6f1c062e39a5ae0a515c6fe264d6ae
                                       <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-<<<<<<< HEAD
                                       <Component id="txtDeskripsi" min="-2" pref="352" max="-2" attributes="0"/>
                                       <Component id="txtTanggal" min="-2" pref="355" max="-2" attributes="0"/>
                                       <Component id="txtJumlah" min="-2" pref="352" max="-2" attributes="0"/>
-=======
-<<<<<<< HEAD
-                                      <Component id="txtDeskripsi" min="-2" pref="352" max="-2" attributes="0"/>
-                                      <Component id="txtTanggal" min="-2" pref="355" max="-2" attributes="0"/>
-                                      <Component id="txtJumlah" min="-2" pref="352" max="-2" attributes="0"/>
-=======
-                                      <Component id="txtDeskripsi" alignment="0" min="-2" pref="352" max="-2" attributes="0"/>
-                                      <Component id="txtTanggal" alignment="0" min="-2" pref="355" max="-2" attributes="0"/>
-                                      <Component id="txtJumlah" alignment="0" min="-2" pref="352" max="-2" attributes="0"/>
->>>>>>> bd6189c89bc2e02562b41b598b9a3e8c0c99b6da
->>>>>>> 8096dfec1e6f1c062e39a5ae0a515c6fe264d6ae
                                   </Group>
                               </Group>
                           </Group>
                       </Group>
                   </Group>
-<<<<<<< HEAD
                   <EmptySpace pref="49" max="32767" attributes="0"/>
-=======
-<<<<<<< HEAD
-                  <EmptySpace pref="49" max="32767" attributes="0"/>
-=======
-                  <EmptySpace max="32767" attributes="0"/>
->>>>>>> bd6189c89bc2e02562b41b598b9a3e8c0c99b6da
->>>>>>> 8096dfec1e6f1c062e39a5ae0a515c6fe264d6ae
               </Group>
           </Group>
         </DimensionLayout>
@@ -130,15 +82,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
               <Group type="102" alignment="1" attributes="0">
-<<<<<<< HEAD
                   <EmptySpace pref="39" max="32767" attributes="0"/>
-=======
-<<<<<<< HEAD
-                  <EmptySpace pref="39" max="32767" attributes="0"/>
-=======
-                  <EmptySpace max="32767" attributes="0"/>
->>>>>>> bd6189c89bc2e02562b41b598b9a3e8c0c99b6da
->>>>>>> 8096dfec1e6f1c062e39a5ae0a515c6fe264d6ae
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="ComboBoxCari" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="pilih_kategori" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -179,18 +123,8 @@
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace pref="22" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-<<<<<<< HEAD
                           <Component id="btnUpdate" max="32767" attributes="0"/>
                           <Component id="btnKembali" max="32767" attributes="0"/>
-=======
-<<<<<<< HEAD
-                          <Component id="btnUpdate" max="32767" attributes="0"/>
-                          <Component id="btnKembali" max="32767" attributes="0"/>
-=======
-                          <Component id="btnUpdate" alignment="0" max="32767" attributes="0"/>
-                          <Component id="btnKembali" alignment="0" max="32767" attributes="0"/>
->>>>>>> bd6189c89bc2e02562b41b598b9a3e8c0c99b6da
->>>>>>> 8096dfec1e6f1c062e39a5ae0a515c6fe264d6ae
                           <Component id="btnSubmit" alignment="0" max="32767" attributes="0"/>
                           <Component id="DELETE" alignment="0" max="32767" attributes="0"/>
                           <Component id="btnClear" alignment="0" max="32767" attributes="0"/>
@@ -210,15 +144,7 @@
                       <Component id="DELETE" min="-2" pref="39" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                       <Component id="btnClear" min="-2" pref="41" max="-2" attributes="0"/>
-<<<<<<< HEAD
                       <EmptySpace pref="63" max="32767" attributes="0"/>
-=======
-<<<<<<< HEAD
-                      <EmptySpace pref="63" max="32767" attributes="0"/>
-=======
-                      <EmptySpace max="32767" attributes="0"/>
->>>>>>> bd6189c89bc2e02562b41b598b9a3e8c0c99b6da
->>>>>>> 8096dfec1e6f1c062e39a5ae0a515c6fe264d6ae
                       <Component id="btnKembali" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                   </Group>
@@ -296,10 +222,6 @@
                     <Column editable="true" title="Jumlah" type="java.lang.Object"/>
                   </Table>
                 </Property>
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 8096dfec1e6f1c062e39a5ae0a515c6fe264d6ae
                 <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                   <TableColumnModel selectionModel="0">
                     <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
@@ -324,11 +246,6 @@
                     </Column>
                   </TableColumnModel>
                 </Property>
-<<<<<<< HEAD
-=======
-=======
->>>>>>> bd6189c89bc2e02562b41b598b9a3e8c0c99b6da
->>>>>>> 8096dfec1e6f1c062e39a5ae0a515c6fe264d6ae
                 <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
                   <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                 </Property>
@@ -380,34 +297,25 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
-<<<<<<< HEAD
-=======
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
->>>>>>> bd6189c89bc2e02562b41b598b9a3e8c0c99b6da
             <Property name="text" type="java.lang.String" value="Tanggal"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel2">
           <Properties>
-<<<<<<< HEAD
-=======
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
->>>>>>> bd6189c89bc2e02562b41b598b9a3e8c0c99b6da
             <Property name="text" type="java.lang.String" value="Deskripsi"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel4">
           <Properties>
-<<<<<<< HEAD
-=======
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
->>>>>>> bd6189c89bc2e02562b41b598b9a3e8c0c99b6da
             <Property name="text" type="java.lang.String" value="Jumlah"/>
           </Properties>
         </Component>
