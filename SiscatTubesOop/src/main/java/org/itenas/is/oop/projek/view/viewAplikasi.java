@@ -21,6 +21,7 @@ import org.itenas.is.oop.projek.utils.PengelolaKoneksi;
  */
 public class viewAplikasi extends javax.swing.JFrame {
 
+    private 
 
     public viewAplikasi(String pemasukan) {
         initComponents();
@@ -295,17 +296,17 @@ public class viewAplikasi extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
 <<<<<<< HEAD
-    private void txtDeskripsiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDeskripsiActionPerformed
+    private void txtDeskripsiActionPerformed(java.awt.event.ActionEvent evt) {                                             
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtDeskripsiActionPerformed
+    }                                            
 
-    private void DELETEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DELETEActionPerformed
+    private void DELETEActionPerformed(java.awt.event.ActionEvent evt) {                                       
         
-    }//GEN-LAST:event_DELETEActionPerformed
+    }                                      
 
-    private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
+    private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {                                         
         clearInputFields();
-    }//GEN-LAST:event_btnClearActionPerformed
+    }                                        
 
 =======
 >>>>>>> bd6189c89bc2e02562b41b598b9a3e8c0c99b6da
@@ -341,24 +342,24 @@ public class viewAplikasi extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnSubmitActionPerformed
 
-    private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
+    private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {                                          
         
-    }//GEN-LAST:event_btnUpdateActionPerformed
+    }                                         
 
-    private void btnKembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKembaliActionPerformed
+    private void btnKembaliActionPerformed(java.awt.event.ActionEvent evt) {                                           
         new TampilanUtama().setVisible(true);
         dispose();
-    }//GEN-LAST:event_btnKembaliActionPerformed
+    }                                          
 
-    private void ComboBoxCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboBoxCariActionPerformed
+    private void ComboBoxCariActionPerformed(java.awt.event.ActionEvent evt) {                                             
        
-    }//GEN-LAST:event_ComboBoxCariActionPerformed
+    }                                            
 
-    private void pilih_kategoriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pilih_kategoriActionPerformed
+    private void pilih_kategoriActionPerformed(java.awt.event.ActionEvent evt) {                                               
    
-    }//GEN-LAST:event_pilih_kategoriActionPerformed
+    }                                              
 
-    private void tabelCatatanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelCatatanMouseClicked
+    private void tabelCatatanMouseClicked(java.awt.event.MouseEvent evt) {                                          
         try {
         int selectedRow = tabelCatatan.getSelectedRow();
         
@@ -379,10 +380,10 @@ public class viewAplikasi extends javax.swing.JFrame {
             "Error", 
             JOptionPane.ERROR_MESSAGE);
     }
-    }//GEN-LAST:event_tabelCatatanMouseClicked
+    }                                         
 =======
 
-    }//GEN-LAST:event_btnSubmitActionPerformed
+    }                                         
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
 int selectedRow = tabelCatatan.getSelectedRow();
@@ -402,7 +403,7 @@ int selectedRow = tabelCatatan.getSelectedRow();
     }//GEN-LAST:event_DELETEActionPerformed
 
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
-
+        clearInputFields();
     }//GEN-LAST:event_btnClearActionPerformed
 
     private void btnKembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKembaliActionPerformed
