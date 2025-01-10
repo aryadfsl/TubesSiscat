@@ -10,7 +10,7 @@ import org.itenas.is.oop.projek.repository.PengelolaLogin;
 
 /**
  *
- * @author ASUS
+ * @author Ahmad
  */
 public class viewLogin extends javax.swing.JFrame {
 
