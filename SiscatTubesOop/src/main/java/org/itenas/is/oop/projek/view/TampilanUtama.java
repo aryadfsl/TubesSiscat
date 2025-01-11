@@ -11,6 +11,8 @@ import java.sql.SQLException;
 import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
 import org.itenas.is.oop.projek.utils.PengelolaKoneksi;
+import org.itenas.is.oop.projek.view.viewAplikasi;
+import org.itenas.is.oop.projek.view.viewLogin;
 
 /**
  *
@@ -79,8 +81,6 @@ public class TampilanUtama extends javax.swing.JFrame {
         jLabel9.setForeground(new java.awt.Color(0, 0, 0));
         jLabel9.setText("Total Pengeluaran");
 
-        jLabel10.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\Downloads\\icons8-minus-24.png")); // NOI18N
-
         txtPengeluaran1.setBackground(new java.awt.Color(255, 255, 255));
         txtPengeluaran1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         txtPengeluaran1.addActionListener(new java.awt.event.ActionListener() {
@@ -127,8 +127,6 @@ public class TampilanUtama extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("SansSerif", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Dashboard Keuangan");
-
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\Downloads\\icons8-money-100.png")); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -177,8 +175,6 @@ public class TampilanUtama extends javax.swing.JFrame {
             }
         });
 
-        jLabel8.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\Downloads\\icons8-done-24.png")); // NOI18N
-
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
@@ -217,8 +213,6 @@ public class TampilanUtama extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Pengeluaran");
-
-        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\Downloads\\icons8-minus-24.png")); // NOI18N
 
         txtPengeluaran.setBackground(new java.awt.Color(255, 255, 255));
         txtPengeluaran.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
@@ -262,7 +256,6 @@ public class TampilanUtama extends javax.swing.JFrame {
                 .addContainerGap(18, Short.MAX_VALUE))
         );
 
-        btnCatat.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\Downloads\\icons8-add-24.png")); // NOI18N
         btnCatat.setText("Catat Keuangan");
         btnCatat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -276,8 +269,6 @@ public class TampilanUtama extends javax.swing.JFrame {
         jLabel11.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(0, 0, 0));
         jLabel11.setText("Total Pengeluaran");
-
-        jLabel12.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\Downloads\\icons8-minus-24.png")); // NOI18N
 
         txtSaldo.setBackground(new java.awt.Color(255, 255, 255));
         txtSaldo.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
@@ -356,7 +347,6 @@ public class TampilanUtama extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        btnKembali1.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\AppData\\Local\\Temp\\Rar$DRa0.820\\Images\\logout.png")); // NOI18N
         btnKembali1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnKembali1ActionPerformed(evt);
