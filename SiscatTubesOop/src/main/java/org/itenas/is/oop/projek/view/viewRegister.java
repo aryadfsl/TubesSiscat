@@ -59,7 +59,7 @@ public class viewRegister extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(228, 192, 135));
 
         btnDaftar.setText("DAFTAR");
         btnDaftar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -99,7 +99,7 @@ public class viewRegister extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Buat Akun");
 
-        jPanel3.setBackground(new java.awt.Color(203, 210, 164));
+        jPanel3.setBackground(new java.awt.Color(114, 191, 120));
 
         jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Yukk masuk ke akun anda");

@@ -58,7 +58,7 @@ public class viewLogin extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 241, 219));
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(228, 192, 135));
 
         btnMasuk.setText("MASUK");
         btnMasuk.addActionListener(new java.awt.event.ActionListener() {
@@ -101,7 +101,7 @@ public class viewLogin extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("SELAMAT DATANG");
 
-        jPanel3.setBackground(new java.awt.Color(203, 210, 164));
+        jPanel3.setBackground(new java.awt.Color(114, 191, 120));
 
         jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Mencatat keuanganmu menjadi lebih mudah");

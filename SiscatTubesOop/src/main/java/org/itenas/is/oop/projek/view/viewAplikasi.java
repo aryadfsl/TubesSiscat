@@ -123,9 +123,9 @@ public class viewAplikasi extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel2.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel2.setBackground(new java.awt.Color(114, 191, 120));
 
-        jPanel1.setBackground(new java.awt.Color(203, 210, 164));
+        jPanel1.setBackground(new java.awt.Color(106, 154, 176));
 
         btnSubmit.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\AppData\\Local\\Temp\\Rar$DRa0.448\\Images\\save.png")); // NOI18N
         btnSubmit.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -215,13 +215,13 @@ public class viewAplikasi extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tabelCatatan);
 
-        txtTanggal.setBackground(new java.awt.Color(204, 204, 204));
+        txtTanggal.setBackground(new java.awt.Color(114, 191, 120));
         txtTanggal.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
 
-        txtJumlah.setBackground(new java.awt.Color(204, 204, 204));
+        txtJumlah.setBackground(new java.awt.Color(114, 191, 120));
         txtJumlah.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
 
-        txtDeskripsi.setBackground(new java.awt.Color(204, 204, 204));
+        txtDeskripsi.setBackground(new java.awt.Color(114, 191, 120));
         txtDeskripsi.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
         txtDeskripsi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -350,7 +350,26 @@ public class viewAplikasi extends javax.swing.JFrame {
     }//GEN-LAST:event_btnKembaliActionPerformed
 
     private void ComboBoxCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboBoxCariActionPerformed
-       
+       String selectedValue = (String) ComboBoxCari.getSelectedItem();
+        PengelolaKoneksi connectionManager = new PengelolaKoneksi();
+        try (Connection conn = connectionManager.masuk()) {
+            String query = "SELECT kategori, tanggal, deskripsi, jumlah FROM catatan WHERE kategori = ?";
+            PreparedStatement ps = conn.prepareStatement(query);
+            ps.setString(1, selectedValue);
+            ResultSet rs = ps.executeQuery();
+            DefaultTableModel model = (DefaultTableModel) tabelCatatan.getModel();
+            model.setRowCount(0);
+            while (rs.next()) {
+                model.addRow(new Object[]{
+                    rs.getString("kategori"),
+                    rs.getString("tanggal"),
+                    rs.getString("deskripsi"),
+                    rs.getString("jumlah")
+                });
+            }
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, "Gagal mencari data: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_ComboBoxCariActionPerformed
 
     private void pilih_kategoriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pilih_kategoriActionPerformed
