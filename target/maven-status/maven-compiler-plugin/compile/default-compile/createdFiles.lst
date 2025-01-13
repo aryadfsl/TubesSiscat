@@ -6,6 +6,7 @@ org\itenas\is\oop\projek\service\DetailTransaksi.class
 org\itenas\is\oop\projek\view\viewRegister$12.class
 org\itenas\is\oop\projek\view\viewRegister$7.class
 org\itenas\is\oop\projek\view\viewRegister$3.class
+org\itenas\is\oop\projek\view\viewMulai$2.class
 org\itenas\is\oop\projek\view\TampilanAwal$5.class
 org\itenas\is\oop\projek\view\viewLogin$9.class
 org\itenas\is\oop\projek\view\TampilanUtama$6.class
@@ -19,6 +20,7 @@ org\itenas\is\oop\projek\view\viewLogin$6.class
 org\itenas\is\oop\projek\view\viewRegister$10.class
 org\itenas\is\oop\projek\view\TampilanAwal$1.class
 org\itenas\is\oop\projek\view\TampilanAwal$4.class
+org\itenas\is\oop\projek\view\viewMulai.class
 org\itenas\is\oop\projek\view\TampilanUtama$7.class
 org\itenas\is\oop\projek\view\TampilanAwal$10.class
 org\itenas\is\oop\projek\model\Transaksi.class
@@ -40,6 +42,7 @@ org\itenas\is\oop\projek\view\viewRegister$1.class
 org\itenas\is\oop\projek\view\TampilanAwal.class
 org\itenas\is\oop\projek\view\TampilanUtama$9.class
 org\itenas\is\oop\projek\view\TampilanAwal$3.class
+org\itenas\is\oop\projek\view\viewMulai$1.class
 org\itenas\is\oop\projek\view\viewRegister.class
 org\itenas\is\oop\projek\view\viewLogin.class
 org\itenas\is\oop\projek\view\viewLogin$2.class

@@ -43,6 +43,7 @@ public class viewRegister extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel8 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         btnDaftar = new javax.swing.JButton();
         txtUsername = new javax.swing.JTextField();
@@ -57,6 +58,8 @@ public class viewRegister extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         cbShowPass = new javax.swing.JCheckBox();
         txtPassword = new javax.swing.JPasswordField();
+
+        jLabel8.setText("jLabel8");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -105,6 +108,7 @@ public class viewRegister extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(114, 191, 120));
 
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Yukk masuk ke akun anda");
 
@@ -128,6 +132,7 @@ public class viewRegister extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("CATAT YUKK");
 
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Untuk tetap terhubung dengan kami");
 
@@ -222,7 +227,7 @@ public class viewRegister extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(169, 169, 169)
                                 .addComponent(jLabel3)))
-                        .addGap(55, 58, Short.MAX_VALUE))
+                        .addGap(55, 56, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnDaftar, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -364,6 +369,7 @@ public class viewRegister extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPasswordField txtPassword;

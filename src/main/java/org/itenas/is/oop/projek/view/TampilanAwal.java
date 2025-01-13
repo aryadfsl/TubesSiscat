@@ -457,7 +457,7 @@ public class TampilanAwal extends javax.swing.JFrame {
     
         if (pilihan == JOptionPane.YES_OPTION) {
         JOptionPane.showMessageDialog(null, "Anda berhasil keluar!", "Logout Berhasil", JOptionPane.INFORMATION_MESSAGE);
-        new viewLogin().setVisible(true);
+        new viewMulai().setVisible(true);
         dispose(); 
     }
     }//GEN-LAST:event_btnKembali1ActionPerformed
