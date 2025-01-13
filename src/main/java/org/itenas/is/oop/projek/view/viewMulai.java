@@ -10,9 +10,7 @@ package org.itenas.is.oop.projek.view;
  */
 public class viewMulai extends javax.swing.JFrame {
 
-    /**
-     * Creates new form viewMulai
-     */
+    
     public viewMulai() {
         initComponents();
     }
