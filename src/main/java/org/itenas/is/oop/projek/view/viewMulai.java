@@ -10,7 +10,6 @@ package org.itenas.is.oop.projek.view;
  */
 public class viewMulai extends javax.swing.JFrame {
 
-    
     public viewMulai() {
         initComponents();
     }
