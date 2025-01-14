@@ -328,7 +328,7 @@ public class viewAplikasi extends javax.swing.JFrame {
 <<<<<<< HEAD
     private void txtDeskripsiActionPerformed(java.awt.event.ActionEvent evt) {                                             
 =======
-    private void txtDeskripsiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDeskripsiActionPerformed
+    private void txtDeskripsiActionPerformed(java.awt.event.ActionEvent evt) {                                             
 >>>>>>> 9102ebcdd9d6358d81a62e1904cdf5d136691401
         // TODO add your handling code here:
     }                                            
@@ -367,7 +367,7 @@ public class viewAplikasi extends javax.swing.JFrame {
    
     }                                              
 =======
-    private void pilih_kategoriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pilih_kategoriActionPerformed
+    private void pilih_kategoriActionPerformed(java.awt.event.ActionEvent evt) {                                               
         try {
             int selectedRow = tabelCatatan.getSelectedRow();
 
@@ -388,7 +388,7 @@ public class viewAplikasi extends javax.swing.JFrame {
                 "Error", 
                 JOptionPane.ERROR_MESSAGE);
         }
-    }//GEN-LAST:event_pilih_kategoriActionPerformed
+    }                                              
 >>>>>>> 9102ebcdd9d6358d81a62e1904cdf5d136691401
 
     private void tabelCatatanMouseClicked(java.awt.event.MouseEvent evt) {                                          
@@ -412,11 +412,8 @@ public class viewAplikasi extends javax.swing.JFrame {
             "Error", 
             JOptionPane.ERROR_MESSAGE);
     }
-<<<<<<< HEAD
-    }                                         
-=======
-
-    }                                         
+    }
+            
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
 int selectedRow = tabelCatatan.getSelectedRow();
@@ -440,7 +437,16 @@ int selectedRow = tabelCatatan.getSelectedRow();
     }//GEN-LAST:event_btnClearActionPerformed
 
     private void btnKembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKembaliActionPerformed
-
+    int selectedRow = tabelCatatan.getSelectedRow();
+        if (selectedRow == -1) {
+            JOptionPane.showMessageDialog(this, "Pilih data yang ingin diperbarui!", "Peringatan", JOptionPane.WARNING_MESSAGE);
+        } else {
+            tabelCatatan.setValueAt(txtTanggal.getText(), selectedRow, 1);
+            tabelCatatan.setValueAt(txtDeskripsi.getText(), selectedRow, 2);
+            tabelCatatan.setValueAt(txtJumlah.getText(), selectedRow, 3);
+            JOptionPane.showMessageDialog(this, "Data berhasil diperbarui!", "Info", JOptionPane.INFORMATION_MESSAGE);
+            clearInputFields();
+        }
     }//GEN-LAST:event_btnKembaliActionPerformed
 
     private void tabelCatatanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelCatatanMouseClicked
@@ -460,7 +466,7 @@ int selectedRow = tabelCatatan.getSelectedRow();
     }//GEN-LAST:event_pilih_kategoriActionPerformed
 >>>>>>> bd6189c89bc2e02562b41b598b9a3e8c0c99b6da
 =======
-    }//GEN-LAST:event_tabelCatatanMouseClicked
+    }                                         
 >>>>>>> 9102ebcdd9d6358d81a62e1904cdf5d136691401
 
     /**
