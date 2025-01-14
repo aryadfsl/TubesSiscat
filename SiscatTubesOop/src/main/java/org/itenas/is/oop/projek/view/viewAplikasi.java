@@ -4,7 +4,6 @@
  */
 package org.itenas.is.oop.projek.view;
 
-<<<<<<< HEAD
 import javax.swing.JOptionPane;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -21,27 +20,84 @@ import org.itenas.is.oop.projek.utils.PengelolaKoneksi;
  */
 public class viewAplikasi extends javax.swing.JFrame {
 
+<<<<<<< HEAD
     private 
+=======
+    static Object txtsaldo;
+    private String currentFilter = "all";
+    private DecimalFormat decimalFormat = new DecimalFormat("#,##0.000");
+    
+    public void setFilter(String filter) {
+        this.currentFilter = filter;
+        refreshTable();
+    }
+
+    private void refreshTable() {
+        try {
+            Connection conn = new PengelolaKoneksi().masuk();
+            String sql;
+            if ("all".equals(currentFilter)) {
+                sql = "SELECT * FROM catatan ORDER BY tanggal DESC";
+            } else {
+                sql = "SELECT * FROM catatan WHERE kategori = ? ORDER BY tanggal DESC";
+            }
+            
+            PreparedStatement ps = conn.prepareStatement(sql);
+            if (!"all".equals(currentFilter)) {
+                ps.setString(1, currentFilter);
+            }
+            
+            ResultSet rs = ps.executeQuery();
+            
+            DefaultTableModel model = (DefaultTableModel) tabelCatatan.getModel();
+            model.setRowCount(0);
+            
+            while (rs.next()) {
+                model.addRow(new Object[]{
+                    rs.getString("kategori"),
+                    rs.getDate("tanggal"),
+                    rs.getString("deskripsi"),
+                    decimalFormat.format(rs.getDouble("jumlah"))
+                });
+            }
+            
+            rs.close();
+            ps.close();
+            conn.close();
+            
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(this, "Error refreshing table: " + ex.getMessage());
+        }
+    }
+
+    private void loadTableData() {
+        PengelolaKoneksi connectionManager = new PengelolaKoneksi();
+        try (Connection conn = connectionManager.masuk()) {
+            String query = "SELECT kategori, tanggal, deskripsi, jumlah FROM catatan";
+            PreparedStatement ps = conn.prepareStatement(query);
+            ResultSet rs = ps.executeQuery();
+
+            DefaultTableModel model = (DefaultTableModel) tabelCatatan.getModel();
+            model.setRowCount(0);
+
+            while (rs.next()) {
+                model.addRow(new Object[]{
+                    rs.getString("kategori"),
+                    rs.getString("tanggal"),
+                    rs.getString("deskripsi"),
+                    decimalFormat.format(rs.getDouble("jumlah"))
+                });
+            }
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, "Gagal memuat data: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+>>>>>>> 9102ebcdd9d6358d81a62e1904cdf5d136691401
 
     public viewAplikasi(String pemasukan) {
         initComponents();
         loadTableData();
     }
-=======
-/**
- *
- * @author Achmad
- */
-public class viewAplikasi extends javax.swing.JFrame {
-
-    /**
-     * Creates new form viewAplikasi
-     */
-    public viewAplikasi() {
-        initComponents();
-    }
-
->>>>>>> bd6189c89bc2e02562b41b598b9a3e8c0c99b6da
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -75,10 +131,7 @@ public class viewAplikasi extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(203, 210, 164));
 
-<<<<<<< HEAD
         btnSubmit.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\AppData\\Local\\Temp\\Rar$DRa0.448\\Images\\save.png")); // NOI18N
-=======
->>>>>>> bd6189c89bc2e02562b41b598b9a3e8c0c99b6da
         btnSubmit.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnSubmitMouseClicked(evt);
@@ -90,40 +143,28 @@ public class viewAplikasi extends javax.swing.JFrame {
             }
         });
 
-<<<<<<< HEAD
         btnUpdate.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\AppData\\Local\\Temp\\Rar$DRa0.023\\Images\\refresh.png")); // NOI18N
-=======
->>>>>>> bd6189c89bc2e02562b41b598b9a3e8c0c99b6da
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnUpdateActionPerformed(evt);
             }
         });
 
-<<<<<<< HEAD
         DELETE.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\AppData\\Local\\Temp\\Rar$DRa0.063\\Images\\delete.png")); // NOI18N
-=======
->>>>>>> bd6189c89bc2e02562b41b598b9a3e8c0c99b6da
         DELETE.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DELETEActionPerformed(evt);
             }
         });
 
-<<<<<<< HEAD
         btnClear.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\AppData\\Local\\Temp\\Rar$DRa0.849\\Images\\clear.png")); // NOI18N
-=======
->>>>>>> bd6189c89bc2e02562b41b598b9a3e8c0c99b6da
         btnClear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnClearActionPerformed(evt);
             }
         });
 
-<<<<<<< HEAD
         btnKembali.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\AppData\\Local\\Temp\\Rar$DRa0.488\\Images\\exit.png")); // NOI18N
-=======
->>>>>>> bd6189c89bc2e02562b41b598b9a3e8c0c99b6da
         btnKembali.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnKembaliActionPerformed(evt);
@@ -155,11 +196,7 @@ public class viewAplikasi extends javax.swing.JFrame {
                 .addComponent(DELETE, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnClear, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-<<<<<<< HEAD
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
-=======
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
->>>>>>> bd6189c89bc2e02562b41b598b9a3e8c0c99b6da
                 .addComponent(btnKembali)
                 .addGap(44, 44, 44))
         );
@@ -246,21 +283,13 @@ public class viewAplikasi extends javax.swing.JFrame {
                                     .addComponent(txtDeskripsi, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtTanggal, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtJumlah, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-<<<<<<< HEAD
                 .addContainerGap(49, Short.MAX_VALUE))
-=======
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
->>>>>>> bd6189c89bc2e02562b41b598b9a3e8c0c99b6da
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-<<<<<<< HEAD
                 .addContainerGap(39, Short.MAX_VALUE)
-=======
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
->>>>>>> bd6189c89bc2e02562b41b598b9a3e8c0c99b6da
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ComboBoxCari, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(pilih_kategori, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -296,7 +325,11 @@ public class viewAplikasi extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     private void txtDeskripsiActionPerformed(java.awt.event.ActionEvent evt) {                                             
+=======
+    private void txtDeskripsiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDeskripsiActionPerformed
+>>>>>>> 9102ebcdd9d6358d81a62e1904cdf5d136691401
         // TODO add your handling code here:
     }                                            
 
@@ -308,38 +341,12 @@ public class viewAplikasi extends javax.swing.JFrame {
         clearInputFields();
     }                                        
 
-=======
->>>>>>> bd6189c89bc2e02562b41b598b9a3e8c0c99b6da
     private void btnSubmitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSubmitMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_btnSubmitMouseClicked
 
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
-<<<<<<< HEAD
-        String kategori = (String) pilih_kategori.getSelectedItem();
-        String tanggal = txtTanggal.getText();
-        String deskripsi = txtDeskripsi.getText();
-        String jumlah = txtJumlah.getText();
-
-        if (kategori.isEmpty() || tanggal.isEmpty() || deskripsi.isEmpty() || jumlah.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Harap isi semua field!", "Peringatan", JOptionPane.WARNING_MESSAGE);
-        } else {
-            ConnectionManager connectionManager = new ConnectionManager();
-            try (Connection conn = connectionManager.logOn()) {
-                String query = "INSERT INTO catatan (kategori, tanggal, deskripsi, jumlah) VALUES (?, ?, ?, ?)";
-                PreparedStatement ps = conn.prepareStatement(query);
-                ps.setString(1, kategori);
-                ps.setString(2, tanggal);
-                ps.setString(3, deskripsi);
-                ps.setString(4, jumlah);
-                ps.executeUpdate();
-                JOptionPane.showMessageDialog(this, "Data berhasil ditambahkan!", "Info", JOptionPane.INFORMATION_MESSAGE);
-                loadTableData(); // Refresh table
-                clearInputFields();
-            } catch (SQLException ex) {
-                JOptionPane.showMessageDialog(this, "Gagal menambahkan data: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-            }
-        }
+        
     }//GEN-LAST:event_btnSubmitActionPerformed
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {                                          
@@ -355,9 +362,34 @@ public class viewAplikasi extends javax.swing.JFrame {
        
     }                                            
 
+<<<<<<< HEAD
     private void pilih_kategoriActionPerformed(java.awt.event.ActionEvent evt) {                                               
    
     }                                              
+=======
+    private void pilih_kategoriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pilih_kategoriActionPerformed
+        try {
+            int selectedRow = tabelCatatan.getSelectedRow();
+
+            if (selectedRow >= 0) {
+                String kategori = tabelCatatan.getValueAt(selectedRow, 0).toString();
+                String tanggal = tabelCatatan.getValueAt(selectedRow, 1).toString();
+                String deskripsi = tabelCatatan.getValueAt(selectedRow, 2).toString();
+                String jumlah = tabelCatatan.getValueAt(selectedRow, 3).toString();
+
+                pilih_kategori.setSelectedItem(kategori);
+                txtTanggal.setText(tanggal);
+                txtDeskripsi.setText(deskripsi);
+                txtJumlah.setText(jumlah);
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, 
+                "Error selecting row: " + e.getMessage(), 
+                "Error", 
+                JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_pilih_kategoriActionPerformed
+>>>>>>> 9102ebcdd9d6358d81a62e1904cdf5d136691401
 
     private void tabelCatatanMouseClicked(java.awt.event.MouseEvent evt) {                                          
         try {
@@ -380,6 +412,7 @@ public class viewAplikasi extends javax.swing.JFrame {
             "Error", 
             JOptionPane.ERROR_MESSAGE);
     }
+<<<<<<< HEAD
     }                                         
 =======
 
@@ -426,6 +459,9 @@ int selectedRow = tabelCatatan.getSelectedRow();
 
     }//GEN-LAST:event_pilih_kategoriActionPerformed
 >>>>>>> bd6189c89bc2e02562b41b598b9a3e8c0c99b6da
+=======
+    }//GEN-LAST:event_tabelCatatanMouseClicked
+>>>>>>> 9102ebcdd9d6358d81a62e1904cdf5d136691401
 
     /**
      * @param args the command line arguments
@@ -453,17 +489,13 @@ int selectedRow = tabelCatatan.getSelectedRow();
             java.util.logging.Logger.getLogger(viewAplikasi.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-<<<<<<< HEAD
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
-=======
->>>>>>> bd6189c89bc2e02562b41b598b9a3e8c0c99b6da
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-<<<<<<< HEAD
                 new viewAplikasi("pemasukan").setVisible(true);
             }
         });
@@ -475,12 +507,6 @@ int selectedRow = tabelCatatan.getSelectedRow();
     txtJumlah.setText("");
 
 }
-=======
-                new viewAplikasi().setVisible(true);
-            }
-        });
-    }
->>>>>>> bd6189c89bc2e02562b41b598b9a3e8c0c99b6da
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> ComboBoxCari;
