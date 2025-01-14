@@ -256,7 +256,7 @@ public class viewLogin extends javax.swing.JFrame {
         
         if (stat == 1){
             JOptionPane.showMessageDialog(null, "Login berhasil", "Pesan", JOptionPane.INFORMATION_MESSAGE);
-            new TampilanAwal().setVisible(true);
+            new TampilanDashboard().setVisible(true);
             dispose();
         }else{
              JOptionPane.showMessageDialog(null, "Username atau Password yang anda masukan salah", "Pesan", JOptionPane.INFORMATION_MESSAGE);

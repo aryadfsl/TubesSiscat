@@ -402,7 +402,7 @@ public class TampilanUtama extends javax.swing.JFrame {
     }//GEN-LAST:event_btnUpdateActionPerformed
 
     private void btnKembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKembaliActionPerformed
-        new TampilanAwal().setVisible(true);
+        new TampilanDashboard().setVisible(true);
         dispose();
     }//GEN-LAST:event_btnKembaliActionPerformed
 
