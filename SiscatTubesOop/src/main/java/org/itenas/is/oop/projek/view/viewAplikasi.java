@@ -127,7 +127,7 @@ public class viewAplikasi extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(203, 210, 164));
 
-        btnSubmit.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\AppData\\Local\\Temp\\Rar$DRa0.448\\Images\\save.png")); // NOI18N
+        btnSubmit.setIcon(new javax.swing.ImageIcon("C:\\Users\\Cloud\\Pictures\\icons8-save-28.png")); // NOI18N
         btnSubmit.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnSubmitMouseClicked(evt);
@@ -139,28 +139,28 @@ public class viewAplikasi extends javax.swing.JFrame {
             }
         });
 
-        btnUpdate.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\AppData\\Local\\Temp\\Rar$DRa0.023\\Images\\refresh.png")); // NOI18N
+        btnUpdate.setIcon(new javax.swing.ImageIcon("C:\\Users\\Cloud\\Downloads\\icons8-update-28 (2).png")); // NOI18N
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnUpdateActionPerformed(evt);
             }
         });
 
-        DELETE.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\AppData\\Local\\Temp\\Rar$DRa0.063\\Images\\delete.png")); // NOI18N
+        DELETE.setIcon(new javax.swing.ImageIcon("C:\\Users\\Cloud\\Downloads\\icons8-delete-28 (1).png")); // NOI18N
         DELETE.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DELETEActionPerformed(evt);
             }
         });
 
-        btnClear.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\AppData\\Local\\Temp\\Rar$DRa0.849\\Images\\clear.png")); // NOI18N
+        btnClear.setIcon(new javax.swing.ImageIcon("C:\\Users\\Cloud\\Downloads\\icons8-clear-28 (1).png")); // NOI18N
         btnClear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnClearActionPerformed(evt);
             }
         });
 
-        btnKembali.setIcon(new javax.swing.ImageIcon("C:\\Users\\ASUS\\AppData\\Local\\Temp\\Rar$DRa0.488\\Images\\exit.png")); // NOI18N
+        btnKembali.setIcon(new javax.swing.ImageIcon("C:\\Users\\Cloud\\Downloads\\icons8-logout-28 (1).png")); // NOI18N
         btnKembali.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnKembaliActionPerformed(evt);
@@ -192,7 +192,7 @@ public class viewAplikasi extends javax.swing.JFrame {
                 .addComponent(DELETE, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnClear, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
                 .addComponent(btnKembali)
                 .addGap(44, 44, 44))
         );
@@ -279,7 +279,7 @@ public class viewAplikasi extends javax.swing.JFrame {
                                     .addComponent(txtDeskripsi, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtTanggal, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtJumlah, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addContainerGap(49, Short.MAX_VALUE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
